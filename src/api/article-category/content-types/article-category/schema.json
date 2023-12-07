@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_categories",
+  "info": {
+    "singularName": "article-category",
+    "pluralName": "article-categories",
+    "displayName": "article_category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "article_categories"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
